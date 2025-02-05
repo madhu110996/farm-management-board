@@ -259,22 +259,13 @@ export default function FarmManagementBoard() {
                           <div>
                             <p className="text-sm text-gray-600">Labor Name: {item.labor?.name}</p>
                             <p className="text-sm text-gray-600">Month: {format(new Date(parseInt(item.labor?.year || '2023'), parseInt(item.labor?.month || '01') - 1), 'MMMM yyyy')}</p>
-                            <Table>
-                              <TableHeader>
-                                <TableRow>
-                                  <TableHead>Day</TableHead>
-                                  <TableHead>Attendance</TableHead>
-                                </TableRow>
-                              </TableHeader>
-                              <TableBody>
-                                {Object.keys(item.labor?.attendance || {}).map(day => (
-                                  <TableRow key={day}>
-                                    <TableCell>{day}</TableCell>
-                                    <TableCell>{item.labor?.attendance[day] ? 'Present' : 'Absent'}</TableCell>
-                                  </TableRow>
-                                ))}
-                              </TableBody>
-                            </Table>
+                            <div className="mt-2">
+                              {Object.keys(item.labor?.attendance || {}).map(day => (
+                                <div key={day} className="flex items-center space-x-2">
+                                  <p className="text-sm text-gray-600">Day {day}: {item.labor?.attendance[day] ? 'Present' : 'Absent'}</p>
+                                </div>
+                              ))}
+                            </div>
                           </div>
                         )}
                         {cat === 'Irrigation' && (
