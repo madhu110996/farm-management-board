@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@shadcn/ui": "^2.3.0",
+    "@shadcn/ui": "^11.1.0",
     "date-fns": "^2.29.3",
     "lucide-react": "^0.206.0",
     "react": "^18.2.0",
